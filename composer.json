@@ -1,11 +1,11 @@
 {
-    "name": "vendor/streampackage",
+    "name": "mohammadatif786/streampackage",
     "description": "A Laravel package for stream functionality",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
+            "name": "mohammadatif786",
             "email": "mohammadatif24680@gmail.com"
         }
     ],
