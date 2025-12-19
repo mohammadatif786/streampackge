@@ -19,7 +19,7 @@ A robust Laravel package to handle live streaming metadata, including stream man
 You can install the package via Composer:
 
 ```bash
-composer require vendor/streampackage
+composer require mohammadatif786/streampackage
 ```
 
 After the package is installed, run the installation command to publish the config file and migrations:
