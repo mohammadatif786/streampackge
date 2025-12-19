@@ -1,0 +1,7 @@
+# StreamPackage
+A Laravel package for managing live streams.
+
+## Installation
+1. Install via composer: `composer require vendor/streampackage`
+2. Run the installer: `php artisan stream:install`
+3. Run migrations: `php artisan migrate`

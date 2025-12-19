@@ -1,0 +1,25 @@
+{
+    "name": "vendor/streampackage",
+    "description": "A Laravel package for stream functionality",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "mohammadatif24680@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Vendor\\StreamPackage\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel":{
+            "providers":[
+                "Vendor\\StreamPackage\\StreamPackageServiceProvider"
+            ]
+        }
+    }
+}
