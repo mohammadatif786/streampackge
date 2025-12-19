@@ -36,6 +36,10 @@ class StreamPackageServiceProvider extends ServiceProvider
             $this->commands([
                 \Vendor\StreamPackage\Console\InstallStreamPackage::class,
             ]);
+
+            $this->publishes([
+                __DIR__ . '/resources/assets' => public_path('vendor/streampackage'),
+            ], 'streampackage-assets');
         }
     }
 }

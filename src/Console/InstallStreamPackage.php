@@ -17,19 +17,25 @@ class InstallStreamPackage extends Command
     {
         $this->info('Installing StreamPackage...');
 
-        // 1. Publish Config
+        // Publish Config
         $this->info('Publishing configuration...');
         $this->call('vendor:publish', [
             '--provider' => "Vendor\StreamPackage\StreamPackageServiceProvider",
             '--tag' => "streampackage-config"
         ]);
 
-        // 2. Publish Migrations
+        // Publish Migrations
         $this->info('Publishing migrations...');
         $this->call('vendor:publish', [
             '--provider' => "Vendor\StreamPackage\StreamPackageServiceProvider",
             '--tag' => "streampackage-migrations"
         ]);
+
+        // Publish Assets
+        $this->info('Publishing assets...');
+        $this->call('vendor:publish', [
+            '--provider' => "Vendor\StreamPackage\StreamPackageServiceProvider",
+            '--tag' => "streampackage-assets"]);
 
         $this->info('StreamPackage installed successfully.');
     }

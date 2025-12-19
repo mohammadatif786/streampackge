@@ -72,6 +72,9 @@ To populate your database with test stream data, run the provided seeder:
 php artisan db:seed --class="Vendor\StreamPackage\Database\Seeders\StreamSeeder"
 ```
 
+```bash
+php artisan vendor:publish --tag=streampackage-assets
+```
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
