@@ -12,9 +12,4 @@ class StreamController extends Controller
         $streams = Stream::all();
         return view('streampackage::index', compact('streams'));
     }
-
-    public function chat()
-    {
-        return view('streampackage::chat');
-    }
 }

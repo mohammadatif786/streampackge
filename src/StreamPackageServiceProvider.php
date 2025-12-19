@@ -40,6 +40,10 @@ class StreamPackageServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/resources/assets' => public_path('vendor/streampackage'),
             ], 'streampackage-assets');
+
+            $this->publishes([
+                __DIR__ . '/resources/views' => ('views/vendor/streampackage'),
+            ], 'streampackage-views');
         }
     }
 }

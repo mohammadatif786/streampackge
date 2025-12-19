@@ -37,6 +37,13 @@ class InstallStreamPackage extends Command
             '--provider' => "Vendor\StreamPackage\StreamPackageServiceProvider",
             '--tag' => "streampackage-assets"]);
 
+        // Publish Views
+        $this->info('Publishing views...');
+        $this->call('vendor:publish', [
+            '--provider' => "Vendor\StreamPackage\StreamPackageServiceProvider",
+            '--tag' => "streampackage-views"
+        ]);
+
         $this->info('StreamPackage installed successfully.');
     }
 }
