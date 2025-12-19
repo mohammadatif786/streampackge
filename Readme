@@ -1,7 +1,17 @@
-# StreamPackage
-A Laravel package for managing live streams.
+<p>A professional and easy-to-use Laravel package for managing live streams, including routing, models, and automated installation.</p>
 
-## Installation
-1. Install via composer: `composer require vendor/streampackage`
-2. Run the installer: `php artisan stream:install`
-3. Run migrations: `php artisan migrate`
+<h2># StreamPackage</h2> <p>Laravel package for managing live streams.</p>
+
+<h2>## Installation</h2> <p><strong>1. Install the package via composer:</strong></p> <code>composer require vendor/streampackage</code>
+
+<p><strong>2. Run the automated installer:</strong></p> <p>This command will publish your configuration and migration files automatically.</p> <code>php artisan stream:install</code>
+
+<p><strong>3. Run the migrations:</strong></p> <p>Create the necessary <code>streams</code> table in your database.</p> <code>php artisan migrate</code>
+
+<h2>## Configuration</h2> <p>You can customize the package by editing the published config file at <code>config/streampackage.php</code>.</p> <pre><code> return [ 'prefix' => 'stream', 'enable_chat' => true, ]; </code></pre>
+
+<h2>## Usage</h2> <p>Access your stream dashboard at the following URL:</p> <code></code>
+
+<p>To use the Stream model in your application:</p> <pre><code> use Vendor\StreamPackage\Models\Stream;
+
+$allStreams = Stream::all(); </code></pre>
