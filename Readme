@@ -1,17 +1,81 @@
-<p>A professional and easy-to-use Laravel package for managing live streams, including routing, models, and automated installation.</p>
+# StreamPackage for Laravel
 
-<h2># StreamPackage</h2> <p>Laravel package for managing live streams.</p>
+A robust Laravel package to handle live streaming metadata, including stream management, chat toggles, and customizable routing.
 
-<h2>## Installation</h2> <p><strong>1. Install the package via composer:</strong></p> <code>composer require vendor/streampackage</code>
+## Features
 
-<p><strong>2. Run the automated installer:</strong></p> <p>This command will publish your configuration and migration files automatically.</p> <code>php artisan stream:install</code>
+- **Custom Routing**: Easily configurable stream prefixes.
+- **Database Ready**: Includes migrations and models for stream management.
+- **Automated Setup**: Single-command installation for config and assets.
+- **Blade Views**: Pre-built templates for stream indexing and chat.
 
-<p><strong>3. Run the migrations:</strong></p> <p>Create the necessary <code>streams</code> table in your database.</p> <code>php artisan migrate</code>
+## Requirements
 
-<h2>## Configuration</h2> <p>You can customize the package by editing the published config file at <code>config/streampackage.php</code>.</p> <pre><code> return [ 'prefix' => 'stream', 'enable_chat' => true, ]; </code></pre>
+- PHP >= 8.0
+- Laravel >= 9.0
 
-<h2>## Usage</h2> <p>Access your stream dashboard at the following URL:</p> <code></code>
+## Installation
 
-<p>To use the Stream model in your application:</p> <pre><code> use Vendor\StreamPackage\Models\Stream;
+You can install the package via Composer:
 
-$allStreams = Stream::all(); </code></pre>
+```bash
+composer require vendor/streampackage
+```
+
+After the package is installed, run the installation command to publish the config file and migrations:
+
+```bash
+php artisan stream:install
+```
+
+Finally, run your migrations to create the streams table:
+
+```bash
+php artisan migrate
+```
+
+## Configuration
+
+After running the install command, you can customize the package behavior in `config/streampackage.php`:
+
+```php
+return [
+    'prefix' => 'stream',      // Change the URL prefix
+    'enable_chat' => true,     // Toggle the chat route
+];
+```
+
+## Usage
+
+### Routing
+
+By default, the package provides the following routes:
+
+- `your-app.com/stream` - Stream Index
+- `your-app.com/stream/chat` - Stream Chat (if enabled)
+
+### Using the Model
+
+You can use the Stream model anywhere in your application:
+
+```php
+use Vendor\StreamPackage\Models\Stream;
+
+$liveStreams = Stream::where('is_live', true)->get();
+```
+
+### Testing Data
+
+To populate your database with test stream data, run the provided seeder:
+
+```bash
+php artisan db:seed --class="Vendor\StreamPackage\Database\Seeders\StreamSeeder"
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This package is open-sourced software licensed under the [MIT license](LICENSE).
